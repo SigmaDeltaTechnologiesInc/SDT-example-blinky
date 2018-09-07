@@ -33,20 +33,20 @@
 Serial g_Serial_pc(USBTX, USBRX, BAUDRATE);
 
 /* DigitalOut */
-#define LED_ON		0
-#define LED_OFF		1
+#define LED_ON      0
+#define LED_OFF     1
 DigitalOut g_DO_LedRed(LED_RED, LED_OFF);
 DigitalOut g_DO_LedGreen(LED_GREEN, LED_OFF);
 DigitalOut g_DO_LedBlue(LED_BLUE, LED_OFF);
 
 int main(void) {
-	g_Serial_pc.printf("< Sigma Delta Technologies Inc. >\n\r");
+    g_Serial_pc.printf("< Sigma Delta Technologies Inc. >\n\r");
 
-	while(true) {
-		g_Serial_pc.printf("LED Toggle\n");
-		g_DO_LedBlue = !g_DO_LedBlue;
-		wait(1);				// 1sec
-	}
+    while(true) {
+        g_Serial_pc.printf("LED Toggle\n");
+        g_DO_LedBlue = !g_DO_LedBlue;
+        wait(1);                // 1sec
+    }
 
-	return 0;
+    return 0;
 }
